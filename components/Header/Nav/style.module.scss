@@ -1,0 +1,27 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 64px 32px 44px 32px;
+  height: 100%;
+  box-sizing: border-box;
+  .body {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    .linkContainer {
+      perspective: 120px;
+      perspective-origin: bottom;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+  .footer {
+    display: flex;
+    gap: 16px;
+    a {
+      margin-top: 12px;
+    }
+  }
+}

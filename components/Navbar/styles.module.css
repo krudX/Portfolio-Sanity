@@ -1,0 +1,29 @@
+.menuLink {
+  padding: 6px 24px;
+  border-radius: 8px;
+  transition: background-color 400ms ease-in-out;
+}
+
+.toggleBtn {
+  transition: background-color 400ms ease-in-out;
+}
+
+.menuWrapper {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  z-index: 0;
+  width: 400px;
+  /* height: calc(100vh - 64px); */
+  /* padding: 64px 32px 32px 32px; */
+  border-radius: 24px;
+  @apply bg-neutral-100;
+}
+
+.menu {
+  width: 380px;
+  height: 450px;
+  background-color: #ffffff;
+  border-radius: 24px;
+  position: relative;
+}

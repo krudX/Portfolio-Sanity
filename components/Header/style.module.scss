@@ -1,0 +1,25 @@
+.header {
+  position: fixed;
+  left: 44px;
+  top: 44px;
+  width: calc(100vw - 88px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+  
+  .menu {
+    width: 380px;
+    height: 450px;
+    border-radius: 12px;
+    position: absolute;
+  }
+}
+
+@media (max-width: "640px") {
+  .header {
+    left: 24px;
+    top: 24px;
+    width: calc(100vw - 48px);
+  }
+}

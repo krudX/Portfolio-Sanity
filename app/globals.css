@@ -2,26 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "Apfel Grotezk";
+  src: url("/fonts/ApfelGrotezk-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "Apfel Grotezk Mittel";
+  src: url("/fonts/ApfelGrotezk-Mittel.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apfel Grotezk Fett";
+  src: url("/fonts/ApfelGrotezk-Fett.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+h1,
+h2,
+.text-h1,
+.text-h2 {
+  font-family: "Apfel Grotezk Fett", sans-serif;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Apfel Grotezk Mittel", sans-serif;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  @apply text-base text-neutral-700;
+  font-family: "Apfel Grotezk", sans-serif;
+  min-height: 100vh;
 }
