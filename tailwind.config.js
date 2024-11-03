@@ -16,6 +16,10 @@ module.exports = {
           800: "#333333",
         },
 
+        primary: "#ea6a51",
+        secondary: "#605975",
+        tertiary: "#dfb97b",
+
         // Transparent Color Overlays
         overlay: {
           "light-neutral": "rgba(255, 255, 255, 0.5)", // Subtle, barely visible
@@ -37,28 +41,28 @@ module.exports = {
         lg: ["1.125rem", { lineHeight: "1.6" }], // 18px
 
         // Heading sizes
-        h6: ["1.25rem", { lineHeight: "1.4" }], // 20px
-        h5: ["1.5rem", { lineHeight: "1.4" }], // 24px
-        h4: ["1.75rem", { lineHeight: "1.3" }], // 28px
-        h3: ["2rem", { lineHeight: "1.3" }], // 32px
-        h2: ["2.5rem", { lineHeight: "1.2" }], // 40px
-        h1: ["3rem", { lineHeight: "1.2" }], // 48px
+        h6: ["1.25rem", { lineHeight: "1.4", fontWeight: "600" }], // 20px
+        h5: ["1.5rem", { lineHeight: "1.4", fontWeight: "600" }], // 24px
+        h4: ["1.75rem", { lineHeight: "1.3", fontWeight: "600" }], // 28px
+        h3: ["2rem", { lineHeight: "1.3", fontWeight: "600" }], // 32px
+        h2: ["2.5rem", { lineHeight: "1.2", fontWeight: "700" }], // 40px
+        h1: ["3.5rem", { lineHeight: "1.2", fontWeight: "700" }], // 48px
 
         // Heading sizes - mobile
-        "h1-mobile": ["2.25rem", { lineHeight: "1.2" }],
-        "h2-mobile": ["2rem", { lineHeight: "1.2" }],
-        "h3-mobile": ["1.75rem", { lineHeight: "1.3" }],
-        "h4-mobile": ["1.5rem", { lineHeight: "1.3" }],
-        "h5-mobile": ["1.25rem", { lineHeight: "1.4" }],
-        "h6-mobile": ["1.125rem", { lineHeight: "1.4" }],
+        "h1-mobile": ["2.5rem", { lineHeight: "1.2", fontWeight: "600" }],
+        "h2-mobile": ["2rem", { lineHeight: "1.2", fontWeight: "600" }],
+        "h3-mobile": ["1.75rem", { lineHeight: "1.3", fontWeight: "600" }],
+        "h4-mobile": ["1.5rem", { lineHeight: "1.3", fontWeight: "600" }],
+        "h5-mobile": ["1.25rem", { lineHeight: "1.4", fontWeight: "700" }],
+        "h6-mobile": ["1.125rem", { lineHeight: "1.4", fontWeight: "700" }],
 
         // Heading sizes - tablet
-        "h1-tablet": ["2.75rem", { lineHeight: "1.2" }],
-        "h2-tablet": ["2.25rem", { lineHeight: "1.2" }],
-        "h3-tablet": ["1.875rem", { lineHeight: "1.3" }],
-        "h4-tablet": ["1.625rem", { lineHeight: "1.3" }],
-        "h5-tablet": ["1.375rem", { lineHeight: "1.4" }],
-        "h6-tablet": ["1.125rem", { lineHeight: "1.4" }],
+        "h1-tablet": ["3rem", { lineHeight: "1.2", fontWeight: "600" }],
+        "h2-tablet": ["2.25rem", { lineHeight: "1.2", fontWeight: "600" }],
+        "h3-tablet": ["1.875rem", { lineHeight: "1.3", fontWeight: "600" }],
+        "h4-tablet": ["1.625rem", { lineHeight: "1.3", fontWeight: "600" }],
+        "h5-tablet": ["1.375rem", { lineHeight: "1.4", fontWeight: "700" }],
+        "h6-tablet": ["1.125rem", { lineHeight: "1.4", fontWeight: "700" }],
       },
 
       fontWeight: {
@@ -89,6 +93,10 @@ module.exports = {
       lg: "1024px",
       xl: "1280px",
       "2xl": "1536px",
+    },
+
+    transitionDuration: {
+      "350": "350ms",
     },
   },
   plugins: [

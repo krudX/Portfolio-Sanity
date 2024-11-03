@@ -26,15 +26,36 @@
 export const slideIn = {
   initial: {
     opacity: 0,
-    y: 20,
+    y: 40,
   },
   enter: (i) => ({
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.9,
-      delay: 0.75 + i * 0.15,
+      delay: 1 + i * 0.15,
       ease: [0.215, 0.61, 0.355, 1],
+    },
+  }),
+  exit: {
+    opacity: 0,
+    transition: { duration: 0.5, type: "tween", ease: "easeInOut" },
+  },
+};
+
+export const pullUp = {
+  initial: {
+    opacity: 0,
+    y: 20,
+  },
+  enter: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      delay: 0.5 + i * 0.05,
+      type: "tween",
+      ease: [0.6, 0.2, 0.3, 1],
     },
   }),
   exit: {

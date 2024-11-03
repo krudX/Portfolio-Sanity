@@ -1,6 +1,29 @@
-import Navbar from "@/components/Navbar/Navbar";
+import localFont from "next/font/local";
 import "./globals.css";
-import Header from "@/components/Header";
+import Header from "@/components/Header/Header";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { ReactLenis } from "lenis/dist/lenis-react";
+
+const apfelGrotezk = localFont({
+  src: [
+    {
+      path: "./fonts/ApfelGrotezk-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/ApfelGrotezk-Mittel.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/ApfelGrotezk-Fett.woff2",
+      weight: "600",
+      style: "normal",
+    },
+  ],
+  display: "swap",
+});
 
 export const metadata = {
   title: "Prathamesh Bankar",
@@ -10,11 +33,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`bg-neutral-400 antialiased`}>
-        {/* <Navbar /> */}
-        <Header />
-        {children}
-      </body>
+      <ReactLenis root>
+        <body className={`bg-neutral-300 antialiased ${apfelGrotezk.className}`}>
+          {/* <Navbar /> */}
+          <Header />
+          {children}
+          <SpeedInsights />
+        </body>
+      </ReactLenis>
     </html>
   );
 }

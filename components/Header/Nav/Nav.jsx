@@ -1,22 +1,39 @@
 import styles from "./style.module.scss";
 import { motion } from "framer-motion";
 import { links, footerLinks } from "./data";
-import { perspective, slideIn } from "./anim";
+import { pullUp, slideIn } from "./anim";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-export default function index() {
+export default function Nav({ toggleMenu }) {
+  const pathName = usePathname();
+
   return (
     <div className={styles.nav}>
       <div className={styles.body}>
         {links.map((link, i) => {
           const { label, path } = link;
+
           return (
             <div key={`b_${i}`} className={styles.linkContainer}>
               <motion.div custom={i} variants={slideIn} initial="initial" animate="enter" exit="exit">
-                <Link href={path} className="text-h2 text-neutral-800">
+                <Link onClick={toggleMenu} href={path} className="text-h2-mobile lg:text-h2 md:text-h2-tablet font-semibold text-neutral-800">
                   {label}
                 </Link>
               </motion.div>
+              {/* <Link
+                // initial={"initial"}
+                // animate={"animate"}
+                onClick={!pathName == path && toggleMenu}
+                href={path}
+                className="relative block overflow-hidden whitespace-nowrap text-h2 text-neutral-800 leading-none"
+              >
+                {label.split("").map((l, i) => (
+                  <motion.span variants={pullUp} initial="initial" animate="enter" exit="exit" className="inline-block" key={i} custom={i}>
+                    {l}
+                  </motion.span>
+                ))}
+              </Link> */}
             </div>
           );
         })}

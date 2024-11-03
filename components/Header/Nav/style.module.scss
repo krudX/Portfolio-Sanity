@@ -10,8 +10,8 @@
     gap: 8px;
     flex-direction: column;
     .linkContainer {
-      perspective: 120px;
-      perspective-origin: bottom;
+      // margin-block: 4px;
+      overflow: hidden;
     }
     a {
       text-decoration: none;

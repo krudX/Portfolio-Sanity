@@ -27,7 +27,7 @@
   display: none;
 }
 
-h1,
+/* h1,
 h2,
 .text-h1,
 .text-h2 {
@@ -39,7 +39,7 @@ h4,
 h5,
 h6 {
   font-family: "Apfel Grotezk Mittel", sans-serif;
-}
+} */
 
 body {
   @apply text-base text-neutral-700;

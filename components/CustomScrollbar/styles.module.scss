@@ -1,6 +1,6 @@
-/* Custom scrollbar thumb */
+/* Custom scrollbar track */
 .scrollContainer {
-  @apply bg-neutral-300;
+  @apply bg-neutral-200;
   position: fixed;
   right: 44px;
   top: 40%;
@@ -11,9 +11,9 @@
   overflow: hidden;
 }
 
-/* Custom scrollbar track */
+/* Custom scrollbar thumb */
 .scrollbar {
-  @apply bg-neutral-100;
+  @apply bg-primary;
   /* transform: translateY(-50%); */
   width: 100%;
   height: 100%;
