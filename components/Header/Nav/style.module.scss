@@ -5,10 +5,12 @@
   padding: 64px 32px 44px 32px;
   height: 100%;
   box-sizing: border-box;
+  
   .body {
     display: flex;
     gap: 8px;
     flex-direction: column;
+
     .linkContainer {
       // margin-block: 4px;
       overflow: hidden;

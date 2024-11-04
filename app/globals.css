@@ -29,7 +29,7 @@
 
 /* Hide default cursor */
 * {
-  cursor: none;
+  /* cursor: none; */
   box-sizing: border-box;
 }
 
@@ -39,7 +39,7 @@ a,
 input,
 textarea,
 select {
-  cursor: none;
+  /* cursor: none; */
 }
 
 body {

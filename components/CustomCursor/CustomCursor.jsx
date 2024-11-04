@@ -30,18 +30,18 @@ const CustomCursor = () => {
 
   const cursorVariants = {
     default: {
-      width: "24px",
-      height: "24px",
+      width: "44px",
+      height: "44px",
       scale: 1,
     },
     enlarge: {
-      width: "32px",
-      height: "32px",
-      scale: 2.5,
+      width: "64px",
+      height: "64px",
+      scale: 1.5,
     },
     hover: {
       width: "auto",
-      height: "32px",
+      height: "44px",
       scale: 1,
     },
     hidden: {
@@ -52,8 +52,8 @@ const CustomCursor = () => {
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      mouseX.set(e.clientX - 20);
-      mouseY.set(e.clientY - 20);
+      mouseX.set(e.clientX - 16);
+      mouseY.set(e.clientY - 16);
     };
 
     const handleMouseEnter = (e) => {
@@ -110,7 +110,7 @@ const CustomCursor = () => {
 
   return (
     <motion.div
-      className="custom-cursor bg-overlay-light-neutral backdrop-blur-[1px]"
+      className="custom-cursor bg-overlay-medium-neutral backdrop-blur-[1px]"
       style={{
         x,
         y,
@@ -133,8 +133,8 @@ const CustomCursor = () => {
       variants={cursorVariants}
       transition={{
         type: "spring",
-        damping: 50,
-        stiffness: 200,
+        damping: 35,
+        stiffness: 150,
         duration: 0.2,
       }}
     >

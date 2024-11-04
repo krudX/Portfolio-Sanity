@@ -43,10 +43,18 @@ export default function Header() {
   return (
     <div className={styles.header}>
       <div className="logo-wrap">
-        <Link href={"/"} className="h-11 aspect-square grid place-content-center rounded-xl bg-neutral-100" data-hover-text="Home">
-          <Image src={Logo} alt="Prathamesh Bankar" width={24} height={30} />
+        <Link href={"/"} className="h-11 aspect-square grid place-content-center rounded-xl bg-neutral-200" data-hide-cursor>
+          <Image src={Logo} alt="Prathamesh Bankar" width={24} height={30} priority />
         </Link>
       </div>
+      {isActive && (
+        <div
+          className="nav-overlay fixed top-0 left-0 bg-none h-screen w-screen z-[995]"
+          onClick={() => {
+            setIsActive(!isActive);
+          }}
+        />
+      )}
       <motion.div
         className={`bg-neutral-100 ${styles.menu}`}
         custom={isDesktop}

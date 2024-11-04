@@ -1,3 +1,4 @@
+import Paragraph from "@/components/AnimatedParagraph/Paragraph";
 import { CustomScrollbar } from "@/components/CustomScrollbar/CustomScrollbar";
 import PageContainer from "@/components/PageContainer/PageContainer";
 
@@ -6,16 +7,24 @@ export default function Home() {
     <PageContainer>
       <main>
         <CustomScrollbar />
-        <section className="h-screen flex flex-col items-center justify-center ">
+        <section className="h-screen flex flex-col items-center justify-center">
           <h1 className="text-h1 text-neutral-800 inline-block text-center" data-enlarge-cursor>
-            UI Designer
+            UI Designer & Frontend Developer
           </h1>
           <div className="dummy h-[400px] w-[80vw] bg-neutral-500 rounded-3xl mt-11" data-hover-text="Play Video"></div>
         </section>
-        <section className="h-screen grid place-content-center">
-          <h1 className="text-h1 text-neutral-800 inline-block text-center" data-enlarge-cursor>
-            Frontend Developer
-          </h1>
+        <section className="h-screen grid place-content-center w-container-xl mx-auto">
+          <div className="w-container-xs">
+            <h1 className="text-h1 text-neutral-800">Myself</h1>
+
+            <Paragraph>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+              minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </Paragraph>
+          </div>
+        </section>
+        <section className="h-screen grid place-content-center w-container-xl mx-auto">
+          <h1 className="text-h1 text-neutral-800">Work</h1>
         </section>
       </main>
     </PageContainer>
