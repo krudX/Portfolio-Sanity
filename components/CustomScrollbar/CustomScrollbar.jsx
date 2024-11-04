@@ -6,7 +6,7 @@ export const CustomScrollbar = () => {
   const { scrollYProgress } = useScroll();
   const scaleY = useSpring(scrollYProgress, {
     stiffness: 100,
-    damping: 30,
+    damping: 10,
     restDelta: 0.001,
   });
 

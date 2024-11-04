@@ -7,7 +7,7 @@ import Nav from "./Nav/Nav";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../app/public/logo-main.svg";
-import useScreenSize from "@/lib/useScreenSize";
+import useScreenSize from "@/lib/hooks/useScreenSize";
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
@@ -43,7 +43,7 @@ export default function Header() {
   return (
     <div className={styles.header}>
       <div className="logo-wrap">
-        <Link href={"/"} className="h-11 aspect-square grid place-content-center rounded-xl bg-neutral-100">
+        <Link href={"/"} className="h-11 aspect-square grid place-content-center rounded-xl bg-neutral-100" data-hover-text="Home">
           <Image src={Logo} alt="Prathamesh Bankar" width={24} height={30} />
         </Link>
       </div>

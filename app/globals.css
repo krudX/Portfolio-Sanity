@@ -27,19 +27,20 @@
   display: none;
 }
 
-/* h1,
-h2,
-.text-h1,
-.text-h2 {
-  font-family: "Apfel Grotezk Fett", sans-serif;
+/* Hide default cursor */
+* {
+  cursor: none;
+  box-sizing: border-box;
 }
 
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Apfel Grotezk Mittel", sans-serif;
-} */
+/* Show default cursor for interactive elements */
+button,
+a,
+input,
+textarea,
+select {
+  cursor: none;
+}
 
 body {
   @apply text-base text-neutral-700;

@@ -16,9 +16,7 @@ module.exports = {
           800: "#333333",
         },
 
-        primary: "#ea6a51",
-        secondary: "#605975",
-        tertiary: "#dfb97b",
+        primary: "#633D79",
 
         // Transparent Color Overlays
         overlay: {
@@ -97,6 +95,7 @@ module.exports = {
 
     transitionDuration: {
       "350": "350ms",
+      "650": "650ms",
     },
   },
   plugins: [

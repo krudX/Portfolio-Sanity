@@ -6,12 +6,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 999;
+  z-index: 998;
   
   .menu {
     width: 380px;
     height: 450px;
-    border-radius: 24px;
+    border-radius: 16px;
     position: absolute;
   }
 }
