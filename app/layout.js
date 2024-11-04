@@ -4,6 +4,7 @@ import Header from "@/components/Header/Header";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ReactLenis } from "lenis/dist/lenis-react";
 import CustomCursor from "@/components/CustomCursor/CustomCursor";
+import PageTransitionEffect from "@/components/PageTransitionEffect/PageTransitionEffect";
 
 const apfelGrotezk = localFont({
   src: [
@@ -39,7 +40,7 @@ export default function RootLayout({ children }) {
           <CustomCursor />
           {/* <Navbar /> */}
           <Header />
-          {children}
+          <PageTransitionEffect>{children}</PageTransitionEffect>
           <SpeedInsights />
         </body>
       </ReactLenis>

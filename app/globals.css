@@ -27,21 +27,6 @@
   display: none;
 }
 
-/* Hide default cursor */
-* {
-  /* cursor: none; */
-  box-sizing: border-box;
-}
-
-/* Show default cursor for interactive elements */
-button,
-a,
-input,
-textarea,
-select {
-  /* cursor: none; */
-}
-
 body {
   @apply text-base text-neutral-700;
   font-family: "Apfel Grotezk", sans-serif;

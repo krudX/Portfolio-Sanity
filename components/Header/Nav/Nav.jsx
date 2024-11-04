@@ -2,8 +2,9 @@ import styles from "./style.module.scss";
 import { motion } from "framer-motion";
 import { links, footerLinks } from "./data";
 import { pullUp, slideIn } from "./anim";
-import Link from "next/link";
+
 import { usePathname } from "next/navigation";
+import TransitionLink from "@/components/PageTransitionEffect/TransitionLink";
 
 export default function Nav({ toggleMenu }) {
   const pathName = usePathname();
@@ -17,9 +18,14 @@ export default function Nav({ toggleMenu }) {
           return (
             <div key={`b_${i}`} className={styles.linkContainer}>
               <motion.div custom={i} variants={slideIn} initial="initial" animate="enter" exit="exit">
-                <Link onClick={toggleMenu} href={path} className="text-h2-mobile lg:text-h2 md:text-h2-tablet font-semibold text-neutral-800">
+                <TransitionLink
+                  onClick={toggleMenu}
+                  path={pathName}
+                  href={path}
+                  className="text-h2-mobile lg:text-h2 md:text-h2-tablet font-semibold text-neutral-800"
+                >
                   {label}
-                </Link>
+                </TransitionLink>
               </motion.div>
               {/* <Link
                 // initial={"initial"}

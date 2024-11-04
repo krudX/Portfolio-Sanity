@@ -6,7 +6,7 @@ export const pageVariants = {
   enter: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.2, delay: 1, type: "tween", ease: "easeOut" },
+    transition: { duration: 0.2, delay: 1.5, type: "tween", ease: "easeOut" },
   },
   exit: {
     y: 20,

@@ -8,6 +8,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../app/public/logo-main.svg";
 import useScreenSize from "@/lib/hooks/useScreenSize";
+import TransitionLink from "../PageTransitionEffect/TransitionLink";
+import { slideDown } from "./anim";
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
@@ -41,15 +43,15 @@ export default function Header() {
   };
 
   return (
-    <div className={styles.header}>
+    <motion.div variants={slideDown} initial="initial" animate="enter" exit="exit" className={styles.header}>
       <div className="logo-wrap">
-        <Link href={"/"} className="h-11 aspect-square grid place-content-center rounded-xl bg-neutral-200" data-hide-cursor>
+        <TransitionLink href={"/"} path={"/"} className="h-11 aspect-square grid place-content-center rounded-xl bg-neutral-200" data-hide-cursor>
           <Image src={Logo} alt="Prathamesh Bankar" width={24} height={30} priority />
-        </Link>
+        </TransitionLink>
       </div>
       {isActive && (
         <div
-          className="nav-overlay fixed top-0 left-0 bg-none h-screen w-screen z-[995]"
+          className={`${styles.overlay}`}
           onClick={() => {
             setIsActive(!isActive);
           }}
@@ -78,6 +80,6 @@ export default function Header() {
           setIsActive(!isActive);
         }}
       />
-    </div>
+    </motion.div>
   );
 }
