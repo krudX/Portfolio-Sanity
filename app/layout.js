@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <ReactLenis root>
-        <body className={`bg-neutral-300 antialiased ${apfelGrotezk.className}`}>
+        <body className={`bg-neutral-500 antialiased ${apfelGrotezk.className}`}>
           <CustomCursor />
           {/* <Navbar /> */}
           <Header />

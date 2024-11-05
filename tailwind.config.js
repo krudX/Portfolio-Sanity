@@ -94,6 +94,7 @@ module.exports = {
     },
 
     width: {
+      full: "100%",
       "container-xl": "1600px",
       "container-l": "1440px",
       "container-md": "1360px",

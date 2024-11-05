@@ -6,6 +6,7 @@ import { LayoutRouterContext } from "next/dist/shared/lib/app-router-context.sha
 import { useContext, useRef, useState, useEffect } from "react";
 
 import styles from "./style.module.scss";
+import { pageTransition } from "./anim";
 
 function FrozenRouter(props) {
   const context = useContext(LayoutRouterContext ?? {});
@@ -44,9 +45,9 @@ const PageTransitionEffect = ({ children }) => {
           setHasLoadedOnce(true);
           return 100;
         }
-        return prev + 1;
+        return prev + 2;
       });
-    }, 75);
+    }, 50);
 
     return () => clearInterval(interval);
   }, [pathname, hasLoadedOnce]);
@@ -58,19 +59,21 @@ const PageTransitionEffect = ({ children }) => {
           key="loading-screen"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { delay: 0.35, duration: 0.35 } }}
+          exit={{ y: -1000, transition: { delay: 0.35, duration: 0.35 } }}
           transition={{ duration: 0.35, type: "tween", ease: [0.76, 0, 0.24, 1] }}
           className={styles.loadingScreen}
         >
-          <motion.div className={`text-h2-mobile md:text-h2-tablet lg:text-h2 text-center transition-all`}>{loadingProgress}%</motion.div>
+          <motion.div className={`text-h2-mobile md:text-h2-tablet lg:text-h2 fixed bottom-6 right-6`}>{loadingProgress}%</motion.div>
         </motion.div>
       ) : (
         <motion.div
           key={pathname}
-          initial={{ opacity: 0, y: 1000 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.75 }}
-          transition={{ duration: 0.5, delay: 0.35, ease: [0.76, 0, 0.24, 1] }}
+          variants={pageTransition}
+          initial="initial"
+          animate="enter"
+          exit="exit"
+          transition={{ duration: 0.75, delay: 0.5, type: "tween", ease: [0.215, 0.61, 0.355, 1] }}
+          className="bg-neutral-300"
         >
           <FrozenRouter>{children}</FrozenRouter>
         </motion.div>

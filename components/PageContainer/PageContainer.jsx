@@ -1,6 +1,22 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
-import { pageVariants } from "./anim";
+
+const pageVariants = {
+  initial: {
+    y: 20,
+    opacity: 0,
+  },
+  enter: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.5, delay: 1, type: "tween", ease: "easeOut" },
+  },
+  exit: {
+    y: 20,
+    opacity: 0,
+    transition: { duration: 0.15, type: "tween", ease: "easeOut" },
+  },
+};
 
 const PageContainer = ({ children }) => {
   return (

@@ -14,6 +14,6 @@ export const slideDown = {
   },
   exit: {
     opacity: 0,
-    transition: { duration: 0.5, delay: 1, type: "tween", ease: "easeInOut" },
+    transition: { duration: 0.5, type: "tween", ease: "easeInOut" },
   },
 };
