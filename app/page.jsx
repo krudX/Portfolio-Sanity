@@ -16,7 +16,7 @@ export default function Home() {
         <div className="w-full">
           {/* <h1 className="text-h1 text-neutral-800">Myself</h1> */}
 
-          <Paragraph maxWidth="w-container-xs" fontSize="text-h1">
+          <Paragraph classes="w-container-xs text-h2-mobile md:text-h2-tablet lg:texth2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
             minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </Paragraph>

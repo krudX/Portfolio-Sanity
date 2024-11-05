@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { LayoutRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { useContext, useRef, useState, useEffect } from "react";
 
+import styles from "./style.module.scss";
+
 function FrozenRouter(props) {
   const context = useContext(LayoutRouterContext ?? {});
   const frozen = useRef(context).current;
@@ -20,8 +22,16 @@ const PageTransitionEffect = ({ children }) => {
   const pathname = usePathname();
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [hasLoadedOnce, setHasLoadedOnce] = useState(() => {
+    return sessionStorage.getItem("hasLoadedOnce") === "true";
+  });
 
   useEffect(() => {
+    if (hasLoadedOnce) {
+      setIsLoading(false);
+      return;
+    }
+
     setLoadingProgress(0);
     setIsLoading(true);
 
@@ -30,55 +40,37 @@ const PageTransitionEffect = ({ children }) => {
         if (prev >= 100) {
           clearInterval(interval);
           setIsLoading(false);
+          sessionStorage.setItem("hasLoadedOnce", "true");
+          setHasLoadedOnce(true);
           return 100;
         }
-        return prev + 2;
+        return prev + 1;
       });
-    }, 50);
+    }, 75);
 
     return () => clearInterval(interval);
-  }, [pathname]);
+  }, [pathname, hasLoadedOnce]);
 
   return (
     <AnimatePresence mode="popLayout">
-      {isLoading ? (
+      {!hasLoadedOnce && isLoading ? (
         <motion.div
           key="loading-screen"
-          initial={{ opacity: 0, y: -1000 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 1000, transition: { delay: 0.35, duration: 0.35 } }}
-          transition={{ duration: 0.5, delay: 0.35, type: "tween", ease: [0.76, 0, 0.24, 1] }}
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100vw",
-            height: "100vh",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "#F7F7F7",
-            color: "#333333",
-            zIndex: 1000,
-          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0, transition: { delay: 0.35, duration: 0.35 } }}
+          transition={{ duration: 0.35, type: "tween", ease: [0.76, 0, 0.24, 1] }}
+          className={styles.loadingScreen}
         >
-          <motion.div
-            style={{
-              fontSize: "3.5rem",
-              fontWeight: 600,
-              textAlign: "center",
-            }}
-          >
-            {loadingProgress}%
-          </motion.div>
+          <motion.div className={`text-h2-mobile md:text-h2-tablet lg:text-h2 text-center transition-all`}>{loadingProgress}%</motion.div>
         </motion.div>
       ) : (
         <motion.div
           key={pathname}
-          initial={{ opacity: 0, y: -1000 }}
+          initial={{ opacity: 0, y: 1000 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 1000 }}
-          transition={{ ease: "easeOut", duration: 0.55, delay: 0.35, ease: [0.76, 0, 0.24, 1] }}
+          exit={{ opacity: 0, scale: 0.75 }}
+          transition={{ duration: 0.5, delay: 0.35, ease: [0.76, 0, 0.24, 1] }}
         >
           <FrozenRouter>{children}</FrozenRouter>
         </motion.div>

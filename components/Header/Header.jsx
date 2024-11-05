@@ -38,7 +38,7 @@ export default function Header() {
       height: "44px",
       top: "0px",
       right: "0px",
-      transition: { duration: 0.75, delay: 0.35, type: "tween", ease: [0.76, 0, 0.24, 1] },
+      transition: { duration: 0.75, type: "tween", ease: [0.76, 0, 0.24, 1] },
     },
   };
 

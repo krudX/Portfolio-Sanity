@@ -5,6 +5,7 @@ export default function Button({ isActive, toggleMenu }) {
     <div className={styles.button}>
       <div className={`backdrop-blur-medium ${isActive ? "bg-neutral-200" : "bg-overlay-light-neutral"} ${styles.slider}`}>
         <button
+          aria-label={isActive ? "Close" : "Menu"}
           data-hide-cursor
           onClick={() => {
             toggleMenu();

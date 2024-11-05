@@ -4,7 +4,7 @@ import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useRef } from "react";
 import styles from "./style.module.scss";
 
-export default function Paragraph({ children, maxWidth, fontSize }) {
+export default function Paragraph({ children, classes }) {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -13,7 +13,7 @@ export default function Paragraph({ children, maxWidth, fontSize }) {
 
   const words = children.split(" ");
   return (
-    <p ref={container} className={`text-neutral-800 ${fontSize} ${maxWidth} ${styles.paragraph}`} data-enlarge-cursor>
+    <p ref={container} className={`text-neutral-800 ${classes} ${styles.paragraph}`} data-enlarge-cursor>
       {words.map((word, i) => {
         const start = i / words.length;
         const end = start + 1 / words.length;
