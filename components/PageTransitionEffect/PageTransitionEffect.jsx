@@ -23,9 +23,14 @@ const PageTransitionEffect = ({ children }) => {
   const pathname = usePathname();
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-  const [hasLoadedOnce, setHasLoadedOnce] = useState(() => {
-    return sessionStorage.getItem("hasLoadedOnce") === "true";
-  });
+  const [hasLoadedOnce, setHasLoadedOnce] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const loadedOnce = sessionStorage.getItem("hasLoadedOnce") === "true";
+      setHasLoadedOnce(loadedOnce);
+    }
+  }, []);
 
   useEffect(() => {
     if (hasLoadedOnce) {
