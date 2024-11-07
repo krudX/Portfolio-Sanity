@@ -33,7 +33,7 @@ export const slideIn = {
     y: 0,
     transition: {
       duration: 0.9,
-      delay: 0.75 + i * 0.15,
+      delay: 0.5 + i * 0.15,
       ease: [0.215, 0.61, 0.355, 1],
     },
   }),
@@ -53,7 +53,7 @@ export const pullUp = {
     y: 0,
     transition: {
       duration: 0.5,
-      delay: 0.5 + i * 0.05,
+      delay: 0.25 + i * 0.05,
       type: "tween",
       ease: [0.6, 0.2, 0.3, 1],
     },

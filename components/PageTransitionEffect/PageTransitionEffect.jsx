@@ -64,7 +64,7 @@ const PageTransitionEffect = ({ children }) => {
           key="loading-screen"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ y: -1000, transition: { delay: 0.35, duration: 0.35 } }}
+          exit={{ y: -1000 }}
           transition={{ duration: 0.35, type: "tween", ease: [0.76, 0, 0.24, 1] }}
           className={styles.loadingScreen}
         >
@@ -78,7 +78,7 @@ const PageTransitionEffect = ({ children }) => {
           animate="enter"
           exit="exit"
           transition={{ duration: 0.75, delay: 0.5, type: "tween", ease: [0.215, 0.61, 0.355, 1] }}
-          className="bg-neutral-300"
+          className="bg-neutral-200"
         >
           <FrozenRouter>{children}</FrozenRouter>
         </motion.div>

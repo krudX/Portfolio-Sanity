@@ -24,14 +24,14 @@ const CustomCursor = () => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  const springConfig = { damping: 50, stiffness: 500 };
+  const springConfig = { damping: 100, stiffness: 700 };
   const x = useSpring(mouseX, springConfig);
   const y = useSpring(mouseY, springConfig);
 
   const cursorVariants = {
     default: {
-      width: "44px",
-      height: "44px",
+      width: "24px",
+      height: "24px",
       scale: 1,
     },
     enlarge: {

@@ -9,7 +9,7 @@ const pageVariants = {
   enter: {
     y: 0,
     opacity: 1,
-    transition: { duration: 0.5, delay: 1, type: "tween", ease: "easeOut" },
+    transition: { duration: 1, delay: 1, type: "tween", ease: "easeOut" },
   },
   exit: {
     y: 20,

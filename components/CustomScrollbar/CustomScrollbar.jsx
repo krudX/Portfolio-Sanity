@@ -5,7 +5,7 @@ import styles from "./styles.module.scss";
 export const CustomScrollbar = () => {
   const { scrollYProgress } = useScroll();
   const scaleY = useSpring(scrollYProgress, {
-    stiffness: 100,
+    stiffness: 500,
     damping: 10,
     restDelta: 0.001,
   });

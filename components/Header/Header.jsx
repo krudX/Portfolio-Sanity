@@ -1,15 +1,15 @@
 "use client";
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import Button from "./Button/Button";
 import styles from "./style.module.scss";
 import Nav from "./Nav/Nav";
-import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../app/public/logo-main.svg";
 import useScreenSize from "@/lib/hooks/useScreenSize";
 import TransitionLink from "../PageTransitionEffect/TransitionLink";
 import { slideDown } from "./anim";
+import Navbar from "../Navbar/Navbar";
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
@@ -45,7 +45,7 @@ export default function Header() {
   return (
     <motion.div variants={slideDown} initial="initial" animate="enter" exit="exit" className={styles.header}>
       <div className="logo-wrap">
-        <TransitionLink href={"/"} path={"/"} className="h-11 aspect-square grid place-content-center rounded-xl bg-neutral-200" data-hide-cursor>
+        <TransitionLink href={"/"} path={"/"} className="h-11 aspect-square grid place-content-center rounded-xl bg-neutral-100" data-hide-cursor>
           <Image src={Logo} alt="Prathamesh Bankar" width={24} height={30} priority />
         </TransitionLink>
       </div>

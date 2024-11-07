@@ -1,19 +1,14 @@
 import Paragraph from "@/components/AnimatedParagraph/Paragraph";
-import { CustomScrollbar } from "@/components/CustomScrollbar/CustomScrollbar";
 import PageContainer from "@/components/PageContainer/PageContainer";
 
 export default function Home() {
   return (
     <PageContainer>
-      <CustomScrollbar />
       <section className="h-screen w-[100vw] flex flex-col items-center justify-center p-11">
-        <h1 className="text-h1 text-neutral-800 inline-block text-center" data-enlarge-cursor>
+        <h1 className="text-h1 text-neutral-800 inline-block text-center py-16" data-enlarge-cursor>
           UI Designer & Frontend Developer
         </h1>
-        <div
-          className="w-full h-[200px] md:h-[250px] lg:h-[400px] lg:w-container-xs bg-neutral-500 rounded-3xl mt-11"
-          data-hover-text="Play Video"
-        ></div>
+        <div className="w-full h-[200px] md:h-[250px] lg:h-[700px] bg-neutral-500 rounded-3xl mt-11" data-hover-text="Play Video"></div>
       </section>
       <section className="h-screen flex flex-col justify-center p-11">
         <div className="">
